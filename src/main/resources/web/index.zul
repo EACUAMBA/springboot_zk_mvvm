@@ -1,0 +1,7 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:n="native">
+    <window vflex="1" hflex="1">
+        <n:div styles="display: flex; align-items: center; justify-contents: center;">
+            <n:h1>Olá ZK com Spring Boot.</n:h1>
+        </n:div>
+    </window>
+</zk>
