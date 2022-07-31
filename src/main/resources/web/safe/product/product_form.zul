@@ -1,0 +1,35 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:n="native">
+    <window border="none">
+            <div viewModel="@id('productFormVM') @init('com.eacuamba.dev.springboot_zk_mvvm.zkoss.view_models.product.ProductFormViewModel')">
+                <n:h1>Registo de Produtos</n:h1>
+                <n:div>
+                    <n:div>ID: <textbox readonly="true" value="@bind(productFormVM.product.id)"/></n:div>
+                    <n:div>Nome: <textbox value="@bind(productFormVM.product.name)"/></n:div>
+                    <n:div>Descrição: <textbox value="@bind(productFormVM.product.description)"/></n:div>
+                    <n:div>Data de registo: <datebox valueInLocalDateTime="@bind(productFormVM.product.createdAt)"/></n:div>
+                    <n:div>Tempo de registo: <timebox valueInLocalDateTime="@bind(productFormVM.product.createdAt)"/></n:div>
+                </n:div>
+
+                <button onClick="@command('saveProduct', product=productFormVM.product)">Registar</button>
+
+                <listbox model="@load(productFormVM.products)" selectedItem="@bind(productFormVM.product)">
+                    <listhead>
+                        <listheader label="ID"/>
+                        <listheader label="Nome"/>
+                        <listheader label="Descrição"/>
+                        <listheader label="Data de criação"/>
+                        <listheader label="Data de actualização"/>
+                    </listhead>
+                    <template name="model" var="product">
+                        <listitem value="@load(product)">
+                            <listcell label="@load(product.id)"/>
+                            <listcell label="@load(product.name)"/>
+                            <listcell label="@load(product.description)"/>
+                            <listcell label="@load(product.createdAt)"/>
+                            <listcell label="@load(product.updatedAt)"/>
+                        </listitem>
+                    </template>
+                </listbox>
+            </div>
+    </window>
+</zk>
