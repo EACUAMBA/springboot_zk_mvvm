@@ -22,8 +22,14 @@ repositories {
 }
 
 dependencies {
-	implementation "org.zkoss.zkspringboot:zkspringboot-starter:${springbootzk}"
+//	ZK Dependencies
+	implementation "org.zkoss.zk:zkbind:${zkversion}"
+	implementation "org.zkoss.zk:zul:${zkversion}"
+	implementation "org.zkoss.zk:zhtml:${zkversion}"
 	implementation "org.zkoss.zk:zkplus:${zkversion}"
+//	implementation "org.zkoss.zk:zuti:${zkversion}"
+	implementation "org.zkoss.zkspringboot:zkspringboot-starter:${springbootzk}"
+	
 //	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
 //	implementation 'org.springframework.boot:spring-boot-starter-security'
